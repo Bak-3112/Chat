@@ -1,0 +1,11 @@
+var usernameForm=document.querySelector(#usernameForm)
+usernameForm.addEventListener('submit',connect,true)
+
+function connect(event)
+{
+	username=document.querySelector(#name).value.trim();
+	
+	if(username){
+		
+	}
+}

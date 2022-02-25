@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+      <title>Welcome to Spring Boot Chat Application</title>
+      <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+<div id="username-page" class="username-page-container"></div>
+
+</body>
+</html>

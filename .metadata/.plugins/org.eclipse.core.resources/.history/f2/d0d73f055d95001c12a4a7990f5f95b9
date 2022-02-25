@@ -1,0 +1,29 @@
+package com.example.messagingapp.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
+
+@Configuration
+@EnableWebSocketMessageBroker
+public class config implements WebSocketMessageBrokerConfigurer{
+
+	@Override
+	public void registerStompEndpoints(StompEndpointRegistry registry) {
+		//In simple words, STOMP is a messaging protocol that defines the rules and format for data exchanging between server and client.
+		//Why we need STOMP for developing the chat application?? As we already using the WebSocket for exchanging the messages. You know the problem with WebSocket is that it fails to identify particular users.	
+		registry.addEndpoint("/ws").withSockJS(); //WebSocket endpoint so that client will use it to establish a connection with our WebSocket server.
+	}
+
+	@Override
+	//This method is used to route the message from one client to another client, who is in the group chat
+	public void configureMessageBroker(MessageBrokerRegistry registry) {
+		registry.enableSimpleBroker("/topic");  //this is used to defines that messages whose destination starts with “/topics” and it should be routed to the message broker. And Message Broker will broadcast the messages to all the connected users or clients who subscribed to that topic
+		registry.setUserDestinationPrefix("/app"); //this is used to define the messages whose destination starts with “/app” and it should be routed to the message handling method
+	}
+	
+	
+
+}

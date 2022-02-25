@@ -1,0 +1,5 @@
+package com.example.chatroom.beans;
+
+public class Message {
+
+}

@@ -1,0 +1,5 @@
+package com.example.messagingapp.bean;
+
+public class MessageBean {
+
+}

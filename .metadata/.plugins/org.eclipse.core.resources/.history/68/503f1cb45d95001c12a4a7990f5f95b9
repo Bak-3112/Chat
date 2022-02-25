@@ -1,0 +1,21 @@
+package com.example.messagingapp.controller;
+
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
+
+import com.example.messagingapp.bean.MessageBean;
+
+@Controller
+public class MessageController {
+	
+	@MessageMapping("/message.send")
+	@SendTo("/topic/public")
+	public MessageBean sendMessage(@Payload MessageBean mBean)
+	{
+		return mBean;
+		
+	}
+
+}

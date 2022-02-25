@@ -1,0 +1,15 @@
+var usernameForm=document.querySelector(#usernameForm)
+var usernamepage=document.querySelector(#username-page)
+var chatpage=document.querySelector(#chat-page)
+usernameForm.addEventListener('submit',connect,true)
+
+function connect(event)
+{
+	username=document.querySelector(#name).value.trim();
+	
+	if(username){
+		usernamepage.classList.add('hidden');
+		
+		
+	}
+}

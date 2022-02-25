@@ -1,0 +1,27 @@
+package com.example.messagingapp.controller;
+
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
+
+import com.example.messagingapp.bean.MessageBean;
+
+@Controller
+public class MessageController {
+	
+	//all the messages sent from clients whose destination starts with /app will route or mapped with these message handling methods which tagged with @MessageMapping annotation
+	@MessageMapping("/message.send")
+	@SendTo("/topic/public")
+	public MessageBean sendMessage(@Payload MessageBean mBean)
+	{
+		return mBean;
+		
+	}
+	
+	@MessageMapping("/message.addUser")
+	public MessageBean addUser(@Payload MessageBean mBean,) {
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.example.chatroom.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.chatroom.beans.Message;
+
+@RestController
+public class MessageController {
+	
+	
+	public Message getContent(@RequestBody Message message) {
+		return message;
+		
+	}
+
+}

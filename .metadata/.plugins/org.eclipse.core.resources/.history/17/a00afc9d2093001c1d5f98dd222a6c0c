@@ -1,0 +1,17 @@
+var stompclient=null
+
+function connect(){
+	
+	let socket=new SockJS(""/server1")
+}
+
+$(document).ready(e => {
+
+	$("#login").click(() => {
+	
+		let name=$("#name-value").val()
+		localStorage.setItem("name",name)
+		connect();
+
+	})
+})

@@ -1,0 +1,2 @@
+var usernameForm=document.querySelector(#usernameForm)
+usernameForm.addEventListener('submit',connect,true)
